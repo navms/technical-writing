@@ -182,6 +182,7 @@ Excalidraw 更适合“视觉论证”，也就是用空间关系、层级、分
 - 对源码解析，优先使用 `sequenceDiagram`、`flowchart`、`stateDiagram-v2`。
 - 对架构说明，优先使用 `flowchart` 或 `graph`，避免画成装饰性示意图。
 - Mermaid 图不要连续堆叠。通常一篇文章 4 到 6 张已经足够。
+- 应使用 mermaid Skill，无需渲染为图像，直接在文章中使用代码块即可。
 
 示例：
 
