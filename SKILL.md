@@ -1,13 +1,13 @@
 ---
 name: technical-writing
-description: Use when writing or rewriting Chinese technical articles, source-code analysis, engineering explainers, backend architecture notes, Java concurrency/JUC content, middleware analysis, Mermaid-assisted explanations, or public technical posts that need a professional, clear, rigorous, non-chatty style.
+description: Use when writing or rewriting Chinese technical articles, source-code analysis, engineering explainers, backend architecture notes, middleware analysis, Mermaid-assisted explanations, or public technical posts that need a professional, clear, rigorous, non-chatty style.
 ---
 
 # 专业技术写作
 
 ## 核心定位
 
-面向零基础的中文技术读者，写出清晰、准确、克制、有判断力的技术文章。文章可以有可读性，但不要写成闲聊、段子、营销文或低密度公众号稿。
+面向初级基础的中文技术读者，写出清晰、准确、克制、有判断力的技术文章。文章可以有可读性，但不要写成闲聊、段子、营销文或低密度公众号稿。
 
 优先追求五件事：
 
@@ -15,13 +15,13 @@ description: Use when writing or rewriting Chinese technical articles, source-co
 - **清楚**：先建立上下文，再解释机制，再给出结论。
 - **有深度**：不只复述现象，还要解释设计动机、边界条件和工程取舍。
 - **易懂**：对于复杂概念，给出一些例子让读者更容易理解。
-- **对于提到的技术框架**，必须要拉出源码，一切以源码为依据。
+- **对于提到的技术框架**，必须要拉出源码，一切以源码为依据，并且尽量以官方文档为分析依据而不是找网上零散的、可能有错误的文章。
 
 ## 适用场景
 
 使用本 Skill 处理以下任务：
 
-- 写 Java、并发、JUC、JVM、Spring、MyBatis、中间件、数据库、架构设计等技术文章。
+- 写 Java、并发、JUC、JVM、Spring、Mybatis、中间件、数据库、架构设计等技术文章。
 - 改写已有技术文章，使其更专业、更紧凑、更有逻辑。
 - 做源码解析，尤其是围绕关键调用链、状态流转、并发控制、异常路径展开。
 - 写公众号、博客、团队内部技术文档，但希望风格成熟克制，不要过度口语化。
@@ -127,43 +127,6 @@ description: Use when writing or rewriting Chinese technical articles, source-co
 
 如果材料不足，不要强行拔高。可以明确写出“这里先限定讨论范围”，再在限定范围内讲清楚。
 
-## Excalidraw 使用规则
-
-可以适当使用 Excalidraw，但它应该服务于理解，而不是替代正文分析。
-
-Excalidraw 更适合“视觉论证”，也就是用空间关系、层级、分组、箭头和对比关系，把文字不容易一次讲清楚的结构呈现出来。不要把它当成 Mermaid 的手绘版，也不要把文章段落搬进图里。
-
-适合使用 Excalidraw 的场景：
-
-- 系统架构：展示模块边界、调用方向、数据流、依赖关系和外部系统。
-- 机制全景：把一次请求、一次任务调度、一次状态变化放到同一张图里看整体。
-- 复杂并发关系：展示线程、队列、锁、共享状态、回调或异步事件之间的相互影响。
-- 对比与取舍：并排展示两种设计方案、两类执行路径、改造前后的结构差异。
-- 源码结构地图：展示关键类、接口、抽象层和扩展点之间的关系，帮助读者先建立方位感。
-
-不适合使用 Excalidraw 的场景：
-
-- 只有线性调用链，Mermaid `sequenceDiagram` 可以更清楚表达。
-- 只有有限状态机，Mermaid `stateDiagram-v2` 更精确。
-- 只是为了让文章“看起来有图”，但图没有提供新的理解。
-- 图中主要内容是大段文字说明，读者看图和读正文没有本质区别。
-
-使用时遵守这些约束：
-
-- 先说明这张图要解决的阅读障碍，例如“先看整体模块边界，再进入源码细节”。
-- 图里只放关键结构：核心组件、关键状态、主路径、异常路径或重要边界，不追求穷尽所有类和方法。
-- 用形状表达语义，而不是所有内容都画成同样大小的盒子。分层、汇聚、分叉、隔离、循环、前后对比，都应该在视觉结构上体现出来。
-- 技术图要尽量包含具体证据，例如真实方法名、事件名、核心字段、简短伪代码或输入输出样例，避免只写“服务 A”“模块 B”“处理逻辑”。
-- 图后必须回到文字解释，指出图中的关键转折、依赖方向、状态变化或设计取舍。
-- 一篇文章通常只需要 3 张 Excalidraw 主图。除非文章本身是架构拆解或源码长文，不要连续堆多张大图。
-- 如果用户明确要求产出 `.excalidraw` 文件、配套架构图或可编辑图稿，应使用 `excalidraw-diagram` Skill，并按其渲染校验流程检查最终图像。
-
-推荐位置：
-
-- 文章前半部分：用一张全景图建立上下文，避免读者直接陷入源码细节。
-- 关键机制段落之前：先给结构，再展开调用链或状态变化。
-- 设计取舍段落：用对比图说明为什么一种方案比另一种更适合当前约束。
-
 ## Mermaid 使用规则
 
 可以适当使用 Mermaid，但它应该服务于理解，而不是替代正文分析。
@@ -173,7 +136,7 @@ Excalidraw 更适合“视觉论证”，也就是用空间关系、层级、分
 - 调用链：展示一次请求、一次任务提交或一次方法调用经过哪些关键节点。
 - 状态流转：展示线程池状态、任务状态、事务状态、订单状态等有限状态变化。
 - 并发关系：展示多个线程、队列、锁、共享变量之间的交互。
-- 架构关系：展示模块、组件、服务、存储之间的依赖和数据流。
+- 架0构关系：展示模块、组件、服务、存储之间的依赖和数据流。
 - 决策分支：展示复杂 if/else、策略选择、降级路径或异常路径。
 
 使用时遵守这些约束：
@@ -183,7 +146,7 @@ Excalidraw 更适合“视觉论证”，也就是用空间关系、层级、分
 - 图后必须回到文字解释，点明关键转折、状态变化或设计取舍。
 - 对源码解析，优先使用 `sequenceDiagram`、`flowchart`、`stateDiagram-v2`。
 - 对架构说明，优先使用 `flowchart` 或 `graph`，避免画成装饰性示意图。
-- Mermaid 图不要连续堆叠。通常一篇文章 4 到 6 张已经足够。
+- Mermaid 图不要连续堆叠。
 
 示例：
 
